@@ -7093,6 +7093,8 @@ webpackJsonp([0], {
                 }),
                 void 0 === u && (u = null),
 				console.log("我爱你大山1")
+		    console.log(u)
+		    
                 d.send(u)
 				console.log("我爱你大山2")
             }
