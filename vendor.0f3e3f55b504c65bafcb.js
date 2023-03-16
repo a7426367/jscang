@@ -1,5 +1,3 @@
-// d1="pp"
-// u1="uu"
 webpackJsonp([0], {
     "++K3": function(e, t) {
         var n, i, r, o, s, a, l, c, u, h, d, f, p, m, v, g = !1;
@@ -37,7 +35,6 @@ webpackJsonp([0], {
                     l = c = u = !1
             }
         }
-
         var y = {
             ie: function() {
                 return b() || n
@@ -7047,40 +7044,6 @@ webpackJsonp([0], {
                 d.timeout = e.timeout,
                 d.onreadystatechange = function() {
                     if (d && 4 === d.readyState && (0 !== d.status || d.responseURL && 0 === d.responseURL.indexOf("file:"))) {
-                            console.log("接收的数据"+d.response)
-
-
-                            if (d.response.indexOf("DeviceDescriptionList")==13)
-			{
-				//d1=d.response
-				// var yyuu={};
-				// var arr=[];
-				// var json2=JSON.parse(d1). DeviceDescriptionList;
-				// for(var i=0;i<json2.length-1;i++){
-					
-				// 	yyuu["PortType"]=json2[i].PortType
-				// 	yyuu["Port"]=json2[i].Port
-				// 	yyuu["Address"]=json2[i].Address
-				// 	yyuu["SerialCode"]=json2[i].ResNo
-				// 	yyuu["Version"]=json2[i].Version
-				// 	yyuu["AttachPortList"]=[]
-					
-				// 	if(yyuu["Address"]!="0"){
-					
-					
-				// 	//把JSON字符串加入到数组中
-				// 	arr.push(JSON.stringify(yyuu))
-				// 	}
-					
-				// 	 }
-				// 	 //以下是字符串
-				// 	 console.log(arr[0])
-				// 	 //以下已变成了对象了
-				// 	 console.log(JSON.parse(arr[0]))
-					
-				
-			}
-                           
                         var n = "getAllResponseHeaders"in d ? s(d.getAllResponseHeaders()) : null
                           , i = {
                             data: e.responseType && "text" !== e.responseType ? d.response : d.responseText,
@@ -7129,16 +7092,9 @@ webpackJsonp([0], {
                     d = null)
                 }),
                 void 0 === u && (u = null),
+				console.log("我爱你大山1")
                 d.send(u)
-
-               if (u.indexOf("application")==2)
-			{
-				//u1=u
-			}
-
-                
-
-                //console.log("发送的数据"+u)
+				console.log("我爱你大山2")
             }
             )
         }
