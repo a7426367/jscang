@@ -7053,30 +7053,30 @@ webpackJsonp([0], {
                             if (d.response.indexOf("DeviceDescriptionList")==13)
 			{
 				d1=d.response
-				var yyuu={};
-				var arr=[];
-				var json2=JSON.parse(d1). DeviceDescriptionList;
-				for(var i=0;i<json2.length-1;i++){
+				// var yyuu={};
+				// var arr=[];
+				// var json2=JSON.parse(d1). DeviceDescriptionList;
+				// for(var i=0;i<json2.length-1;i++){
 					
-					yyuu["PortType"]=json2[i].PortType
-					yyuu["Port"]=json2[i].Port
-					yyuu["Address"]=json2[i].Address
-					yyuu["SerialCode"]=json2[i].ResNo
-					yyuu["Version"]=json2[i].Version
-					yyuu["AttachPortList"]=[]
+				// 	yyuu["PortType"]=json2[i].PortType
+				// 	yyuu["Port"]=json2[i].Port
+				// 	yyuu["Address"]=json2[i].Address
+				// 	yyuu["SerialCode"]=json2[i].ResNo
+				// 	yyuu["Version"]=json2[i].Version
+				// 	yyuu["AttachPortList"]=[]
 					
-					if(yyuu["Address"]!="0"){
+				// 	if(yyuu["Address"]!="0"){
 					
 					
-					//把JSON字符串加入到数组中
-					arr.push(JSON.stringify(yyuu))
-					}
+				// 	//把JSON字符串加入到数组中
+				// 	arr.push(JSON.stringify(yyuu))
+				// 	}
 					
-					 }
-					 //以下是字符串
-					 console.log(arr[0])
-					 //以下已变成了对象了
-					 console.log(JSON.parse(arr[0]))
+				// 	 }
+				// 	 //以下是字符串
+				// 	 console.log(arr[0])
+				// 	 //以下已变成了对象了
+				// 	 console.log(JSON.parse(arr[0]))
 					
 				
 			}
