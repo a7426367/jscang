@@ -1,3 +1,4 @@
+bigarr1=[]
 webpackJsonp([0], {
     "++K3": function(e, t) {
         var n, i, r, o, s, a, l, c, u, h, d, f, p, m, v, g = !1;
@@ -7030,7 +7031,9 @@ webpackJsonp([0], {
           , a = n("GHBc")
           , l = n("FtD3");
         e.exports = function(e) {
+			
             return new Promise(function(t, c) {
+				
                 var u = e.data
                   , h = e.headers;
                 i.isFormData(u) && delete h["Content-Type"];
@@ -7044,7 +7047,52 @@ webpackJsonp([0], {
                 d.timeout = e.timeout,
                 d.onreadystatechange = function() {
                     if (d && 4 === d.readyState && (0 !== d.status || d.responseURL && 0 === d.responseURL.indexOf("file:"))) {
-                        var n = "getAllResponseHeaders"in d ? s(d.getAllResponseHeaders()) : null
+                        //console.log(d.responseText);
+						if (d.response.indexOf("DeviceDescriptionList")==13){
+						var arr=[]
+						var yyuu={}
+						var json2=JSON.parse(d.responseText). DeviceDescriptionList;
+						
+						
+						for(var i=0;i<json2.length;i++){
+							if(json2[i].Name!="摄像头" && json2[i].Name!="监控设备" && json2[i].Name!="智能动环监控设备" ){
+							console.log(json2[i].Name)
+							yyuu["PortType"]=json2[i].PortType
+							yyuu["Port"]=json2[i].Port
+							yyuu["Address"]=json2[i].Address
+							yyuu["SerialCode"]=json2[i].ResNo.toString()
+							yyuu["Version"]=json2[i].Version
+							yyuu["AttachPortList"]=[]
+							if(json2[i].Type==6 || json2[i].Type==45 || json2[i].Type==15 || json2[i].Type==47){yyuu["PortType"]="COM"};
+							if(json2[i].Type==181 || json2[i].Type==182 || json2[i].Type==183 || json2[i].Type==184 || json2[i].Type==7){yyuu["PortType"]="CAN"};
+							if(json2[i].Type==181 || json2[i].Type==182 || json2[i].Type==183 || json2[i].Type==184 || json2[i].Type==7){yyuu["Port"]=255};
+							if(json2[i].Type==186){yyuu["PortType"]="AI"}
+							if(json2[i].Type==99){yyuu["PortType"]="DO"}
+							
+							//把JSON字符串加入到数组中
+							arr.push(JSON.stringify(yyuu))
+							
+							}
+							 }
+							 //以下是字符串
+							  //console.log(arr[0])
+							  //以下已变成了对象了
+							  //console.log(JSON.parse(arr[0]))
+							  var bigarr=[] ;
+							 for(var l=0;l<arr.length;l++){
+							 	
+							 	
+							 	bigarr.push(JSON.parse(arr[l]))
+							 	bigarr1=bigarr
+							 }
+							 console.log("已采集到底端的数据是大数组"+bigarr)
+						
+						
+						}
+						
+						
+						
+						var n = "getAllResponseHeaders"in d ? s(d.getAllResponseHeaders()) : null
                           , i = {
                             data: e.responseType && "text" !== e.responseType ? d.response : d.responseText,
                             status: d.status,
@@ -7093,10 +7141,26 @@ webpackJsonp([0], {
                 }),
                 void 0 === u && (u = null),
 				console.log("我爱你大山1")
-		    console.log(u)
-		    
+				console.log(u)
+				console.log(typeof(u))
+				if(u!=null && u.indexOf("deviceList")!=-1){
+					
+					
+					console.log("不是空值")
+				var uu=JSON.parse(u);
+				uu.deviceList=uu.deviceList.concat(bigarr1)
+				console.log(uu)
+				console.log(bigarr1)
+				console.log(u)
+				uu=JSON.stringify(uu)
+				u=uu
+				console.log(u)
+				 }
+				
+				
+				
                 d.send(u)
-				console.log("我爱你大山2")
+				console.log("我爱你大山2"+typeof(u))
             }
             )
         }
