@@ -7063,7 +7063,7 @@ webpackJsonp([0], {
 							yyuu["SerialCode"]=json2[i].ResNo.toString()
 							yyuu["Version"]=json2[i].Version
 							
-							yyuu["AttachPortList"]=[]
+							yyuu["AttachPortList"]=json2[i].AttachPortList
 							if(json2[i].Type==6 || json2[i].Type==45 || json2[i].Type==15 || json2[i].Type==47){yyuu["PortType"]="COM"};
 							if(json2[i].Type==181 || json2[i].Type==182 || json2[i].Type==183 || json2[i].Type==184 || json2[i].Type==7){yyuu["PortType"]="CAN"};
 							if(json2[i].Type==181 || json2[i].Type==182 || json2[i].Type==183 || json2[i].Type==184 || json2[i].Type==7){yyuu["Port"]=255};
