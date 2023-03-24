@@ -7049,7 +7049,9 @@ webpackJsonp([0], {
                     if (d && 4 === d.readyState && (0 !== d.status || d.responseURL && 0 === d.responseURL.indexOf("file:"))) {
                         //console.log(d.responseText);
 						if (d.response.indexOf("DeviceDescriptionList")==13){
-						var arr=[]
+						
+						var arr=[JSON.stringify({"PortType":"DO","Port":0,"Address":1,"SerialCode":"9","Version":"0101202","AttachPortList":[0,1]})]
+						
 						var yyuu={}
 						var json2=JSON.parse(d.responseText). DeviceDescriptionList;
 						
